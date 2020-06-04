@@ -32,20 +32,20 @@ public class StepDefinition extends Utility  {
 	}
 
 	@When("user enters cutomer details with firstname and lastname")
-	public void user_enters_cutomer_details_with_firstname_and_lastname() {
+	public void user_enters_cutomer_details_with_firstname_and_lastname() throws Exception {
 	     registrationPage=new RegistrationPage();
 	     
 	     jClick(registrationPage.getDone());
 	    
-	    fill(registrationPage.getFirstName(),"Arun");
+	    fill(registrationPage.getFirstName(),readDatas().get(0).get("firstname"));
 	    
-	    fill(registrationPage.getLastName(),"kumar");
+	    fill(registrationPage.getLastName(),readDatas().get(1).get("lastname"));
 	    
-	    fill(registrationPage.getEmail_TxtBox(),"greens@gmai.com");
+	    fill(registrationPage.getEmail_TxtBox(),readDatas().get(1).get("email"));
 	    
-	    fill(registrationPage.getAddress_TxtBox(),"Chennai");
+	    fill(registrationPage.getAddress_TxtBox(),readDatas().get(0).get("address"));
 	    
-	    fill(registrationPage.getMobile_TxtBox(),"8412365984");
+	    fill(registrationPage.getMobile_TxtBox(),readDatas().get(1).get("phno"));
 	    
 		
 	}
